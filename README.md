@@ -10,7 +10,7 @@ Nhóm đồ án lớp Công nghệ Web, sinh viên Trường Đại học Quy Nh
 
 ## Documents
 
-* [Tài liệu báo cáo](https://docs.google.com/document/d/1LUvr5tB3B-NPtEZEVR8-QsOBd_uXABWk/edit?usp=sharing&ouid=107116811889320893140&rtpof=true&sd=true) - Báo cáo dự án
+* [Tài liệu báo cáo](https://drive.google.com/file/d/1Z2zZT5eTZy4QT0N9QAFuFpLr2DMIGFMb/view?usp=sharing) - Báo cáo dự án
 
 
 ## Project Scope
