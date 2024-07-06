@@ -1,0 +1,34 @@
+<div class="col-sm-9">
+  <div class="form-group">
+    <label for="tenSP">Tên Sản Phẩm</label>
+    <input type="text" class="form-control" id="tenSP" name="tenSP" [(ngModel)]="tenSP" disabled>
+  </div>
+  <div class="form-group">
+    <label for="moTa">Mô Tả</label>
+    <textarea class="form-control" id="moTa" name="moTa" [(ngModel)]="moTa" disabled></textarea>
+  </div>
+  <div class="form-group">
+    <label for="giaBan">Giá Bán</label>
+    <input type="number" class="form-control" id="giaBan" name="giaBan" [(ngModel)]="giaBan" disabled>
+  </div>
+  <div class="form-group">
+    <label for="soLuong">Số Lượng</label>
+    <input type="number" class="form-control" id="soLuong" name="soLuong" [(ngModel)]="soLuong" disabled>
+  </div>
+  <div class="form-group">
+    <label for="idThuongHieu">Thương Hiệu</label>
+    <select class="form-control" id="idThuongHieu" name="idThuongHieu" [(ngModel)]="idThuongHieu" disabled>
+      <option *ngFor="let th of thuongHieuList" [value]="th.id">{{ th.tenTH }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="idDanhMuc">Danh Mục</label>
+    <select class="form-control" id="idDanhMuc" name="idDanhMuc" [(ngModel)]="idDanhMuc" disabled>
+      <option *ngFor="let dm of danhMucList" [value]="dm.id">{{ dm.tenDM }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="image">Ảnh sản phẩm</label>
+    <img [src]="'http://localhost:5009/SanPham/Images/'+image" id="image" width="100" [alt]="sanPham.tenSP" class="img-fluid">
+  </div>
+</div>

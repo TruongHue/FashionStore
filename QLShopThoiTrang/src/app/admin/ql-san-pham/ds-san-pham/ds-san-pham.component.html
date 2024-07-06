@@ -1,0 +1,108 @@
+<app-admin></app-admin>
+
+<div class="container">
+  <br>
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel3">Thông tin sản phẩm</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongXem()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-xem-san-pham *ngIf="xem" [sanPham]="sanPham" ></app-xem-san-pham>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa thông tin sản phẩm</h5>
+            <button type="button" class="close" data-dismiss="modal" (click)="dongSua()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-sua-san-pham *ngIf="sua" [sanPham]="sanPham" ></app-sua-san-pham>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel2">Chỉnh sửa thông tin sản phẩm</h5>
+            <button type="button" class="close" data-dismiss="modal" (click)="dongThem()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-them-san-pham *ngIf="them"></app-them-san-pham>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <h4><b>Danh sách sản phẩm</b></h4>
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-success mr-1" (click)="themSanPham()" data-toggle="modal" data-target="#exampleModal2" >
+        Thêm sản phẩm
+      </button>
+    </div>
+    <div class="col-sm-3">
+      <li class="p-input-icon-right">
+        <i class="p-input-icon-left pi pi-search" (click)="timSanPham()"></i>
+        <input pInputText type="text" placeholder="Tìm sản phẩm..." [(ngModel)]="searchString"/>
+      </li>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="10%"> Mã sản phẩm </th>
+            <th> </th>
+            <th> Tên sản phẩm </th>
+            <th> Mô tả </th>
+            <th> Giá </th>
+            <th width="7%"> Số lượng </th>
+            <th width="15%"> Tùy chọn </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sanPham of DSSanPham">
+            <td align="center">{{sanPham.idSP}}</td>
+            <td>
+              <a>
+                <img [src]="'http://localhost:5009/SanPham/Images/'+sanPham.image" [alt]="sanPham.tenSP" class="img-fluid">
+              </a>
+            </td>
+            <td>{{sanPham.tenSP}}</td>
+            <td>{{sanPham.moTa}}</td>
+            <td>{{sanPham.giaBan }}.000đ</td>
+            <td>{{sanPham.soLuong}}</td>
+            <td>
+              <button type="button" class="btn btn-success mr-1" (click)="xemSanPham(sanPham)" data-toggle="modal" data-target="#exampleModal3" >
+                Xem
+              </button>
+              <button type="button" class="btn btn-primary mr-1" (click)="suaSanPham(sanPham)" data-toggle="modal" data-target="#exampleModal" >
+                Sửa
+              </button>
+              <button type="button" class="btn btn-danger mr-1" (click)="xoaSanPham(sanPham)">
+                Xóa
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

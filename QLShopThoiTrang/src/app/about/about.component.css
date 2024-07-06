@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h1, h2 {
+  text-shadow: -2px 0 #0051a3, 0 2px #0051a3, 2px 0 #0051a3, 0 -2px #0051a3;
+  padding: 15px;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+
+.introduction {
+  padding: 20px 0;
+  text-align: justify;
+}
+.introduction img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.address {
+  margin-top: 20px;
+  font-style: italic;
+}

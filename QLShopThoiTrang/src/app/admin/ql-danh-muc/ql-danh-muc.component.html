@@ -1,0 +1,100 @@
+<app-admin></app-admin>
+
+<div class="container">
+  <br>
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel3">Thông tin danh mục</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongXem()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-xem-danh-muc *ngIf="xem" [danhMuc]="danhMuc"></app-xem-danh-muc>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa thông tin danh mục</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongSua()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-sua-danh-muc *ngIf="sua" [danhMuc]="danhMuc"></app-sua-danh-muc>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Chỉnh sửa thông tin danh mục</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongThem()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-them-danh-muc *ngIf="them"></app-them-danh-muc>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4><b>Danh sách danh mục</b></h4>
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-success mr-1" (click)="themDanhMuc()" data-toggle="modal" data-target="#exampleModal2" >
+        Thêm danh mục
+      </button>
+    </div>
+    <div class="col-sm-3">
+      <li class="p-input-icon-right">
+        <i class="p-input-icon-left pi pi-search" (click)="timDanhMuc()"></i>
+        <input pInputText type="text" placeholder="Tìm danh mục..." [(ngModel)]="searchString"/>
+      </li>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+          <tr align="center">
+            <th> Mã danh mục</th>
+            <th> Tên danh mục</th>
+            <th> Mô tả </th>
+            <th> Tùy chọn </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center" *ngFor="let danhmuc of DSDanhMuc">
+            <p *ngIf="!danhmuc || danhmuc.length === 0">Không tìm thấy danh mục nào.</p>
+            <td>{{danhmuc.id}}</td>
+            <td>{{danhmuc.tenDM}}</td>
+            <td>{{danhmuc.moTa}}</td>
+            <td>
+              <button type="button" class="btn btn-success mr-1" (click)="xemDanhMuc(danhmuc)" data-toggle="modal" data-target="#exampleModal3" >
+                Xem
+              </button>
+              <button type="button" class="btn btn-primary mr-1" (click)="suaDanhMuc(danhmuc)" data-toggle="modal" data-target="#exampleModal" >
+                Sửa
+              </button>
+              <button type="button" class="btn btn-danger mr-1" (click)="xoaDanhMuc(danhmuc)">
+                Xóa
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

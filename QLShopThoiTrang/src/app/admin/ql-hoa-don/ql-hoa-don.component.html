@@ -1,0 +1,72 @@
+<app-admin></app-admin>
+
+<div class="container">
+
+  <br>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Chi tiết hóa đơn</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongXem()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-xem-hoa-don *ngIf="xem" [hoaDon]="hoaDon"></app-xem-hoa-don>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4><b>Danh sách hóa đơn</b></h4>
+    <div class="col-sm-9">
+    </div>
+    <div class="col-sm-3">
+      <li class="p-input-icon-right">
+        <i class="p-input-icon-left pi pi-search" (click)="timHoaDon()"></i>
+        <input pInputText type="text" placeholder="Tìm hóa đơn..." [(ngModel)]="searchString"/>
+      </li>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th> Mã hóa đơn </th>
+            <th> Tên khách hàng </th>
+            <th> Số điện thoại </th>
+            <th> Địa chỉ </th>
+            <th> Ngày tạo </th>
+            <th> Tổng tiền </th>
+            <th> Trạng thái hóa đơn </th>
+            <th> Hình thức thanh toán </th>
+            <th width="15%"> Tùy chọn </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hoaDon of HDSanPham">
+            <td  align="center">{{ hoaDon.idHD }}</td>
+            <td>{{ hoaDon.tenUser }}</td>
+            <td>{{ hoaDon.sdt }}</td>
+            <td>{{ hoaDon.diaChi }}</td>
+            <td>{{ hoaDon.ngayTao }}</td>
+            <td>{{ hoaDon.tongTien }}.000đ</td>
+            <td>{{ hoaDon.trangThaiHD }}</td>
+            <td>{{ hoaDon.hinhThucThanhToan }}</td>
+            <td>
+              <button type="button" class="btn btn-success mr-1" (click)="xemChiTietHoaDon(hoaDon)" data-toggle="modal" data-target="#exampleModal" >
+                Xem chi tiết
+              </button>
+              <button type="button" class="btn btn-danger mr-1" (click)="xoaHoaDon(hoaDon)">
+                Xóa
+              </button>
+            </td>
+          </tr>
+        </tbody>
+     </table>
+    </div>
+  </div>
+</div>

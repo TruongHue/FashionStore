@@ -1,0 +1,105 @@
+<app-admin></app-admin>
+
+<div class="container">
+  <br>
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel3">Thông tin người dùng</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongXem()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-xem-user *ngIf="xem" [user]="user"></app-xem-user>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa thông tin người dùng</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongSua()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-sua-user *ngIf="sua" [user]="user"></app-sua-user>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Chỉnh sửa thông tin người dùng</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongThem()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-them-user *ngIf="them"></app-them-user>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4><b>Danh sách người dùng</b></h4>
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-success mr-1" (click)="themUser()" data-toggle="modal" data-target="#exampleModal2" >
+        Thêm người dùng
+      </button>
+    </div>
+    <div class="col-sm-3">
+      <li class="p-input-icon-right">
+        <i class="p-input-icon-left pi pi-search" (click)="timUser()"></i>
+        <input pInputText type="text" placeholder="Tìm người dùng..." [(ngModel)]="searchString"/>
+      </li>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+            <th> Mã người dùng </th>
+            <th> Tên người dùng </th>
+            <th> Tên đăng nhập </th>
+            <th> Mật khẩu </th>
+            <th> Số điện thoại </th>
+            <th> Địa chỉ </th>
+            <th> Quyền </th>
+            <th> Tùy chọn </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of DSUser">
+          <td align="center">{{user.idUser}}</td>
+          <td>{{user.tenUser}}</td>
+          <td>{{user.userName}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.sdt}}</td>
+          <td>{{user.diaChi}}</td>
+          <td>{{user.quyen}}</td>
+          <td>
+            <button type="button" class="btn btn-success mr-1" (click)="xemUser(user)" data-toggle="modal" data-target="#exampleModal3" >
+              Xem
+            </button>
+            <button type="button" class="btn btn-primary mr-1" (click)="suaUser(user)" data-toggle="modal" data-target="#exampleModal" >
+              Sửa
+            </button>
+            <button type="button" class="btn btn-danger mr-1" (click)="xoaUser(user)">
+              Xóa
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

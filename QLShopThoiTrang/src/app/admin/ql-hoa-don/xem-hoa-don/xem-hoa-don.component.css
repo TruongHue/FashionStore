@@ -1,0 +1,16 @@
+img{
+  height: 90px;
+  width: 100px;
+}
+
+.form-control {
+  width: 445px;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+.table {
+  width: 445px;
+}

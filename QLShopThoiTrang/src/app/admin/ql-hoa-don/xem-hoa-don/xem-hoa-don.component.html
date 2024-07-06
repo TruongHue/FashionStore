@@ -1,0 +1,59 @@
+<div class="col-sm-9">
+  <div class="form-group">
+    <label for="idHD">Mã hóa đơn</label>
+    <input type="text" class="form-control" id="idHD" name="idHD" [(ngModel)]="idHD" disabled>
+  </div>
+  <div class="form-group">
+    <label for="tenUser">Tên khách hàng</label>
+    <input type="text" class="form-control" id="tenUser" name="tenUser" [(ngModel)]="tenUser" disabled>
+  </div>
+  <div class="form-group">
+    <label for="sdt">Số điện thoại</label>
+    <input type="text" class="form-control" id="sdt" name="sdt" [(ngModel)]="sdt" disabled>
+  </div>
+  <div class="form-group">
+    <label for="diaChi">Địa chỉ</label>
+    <input type="text" class="form-control" id="diaChi" name="diaChi" [(ngModel)]="diaChi" disabled>
+  </div>
+  <div class="form-group">
+    <label for="ngayTao">Ngày tạo</label>
+    <input type="text" class="form-control" id="ngayTao" name="ngayTao" [(ngModel)]="ngayTao" disabled>
+  </div>
+  <div class="form-group">
+    <label for="trangThaiHD">Trạng thái hóa đơn</label>
+    <input type="text" class="form-control" id="trangThaiHD" name="trangThaiHD" [(ngModel)]="trangThaiHD" disabled>
+  </div>
+  <div class="form-group">
+    <label for="hinhThucThanhToan">Hình thức thanh toán</label>
+    <input type="text" class="form-control" id="hinhThucThanhToan" name="hinhThucThanhToan" [(ngModel)]="hinhThucThanhToan" disabled>
+  </div>
+  <div class="form-group">
+    <b><label for="hinhThucThanhToan">Danh sách sản phẩm</label></b>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th> Tên sản phẩm </th>
+          <th>  </th>
+          <th> Giá </th>
+          <th width="20%"> Số lượng </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sp of sanPham">
+          <td>{{ sp.tenSP }}</td>
+          <td>
+            <a>
+              <img [src]="'http://localhost:5009/SanPham/Images/'+sp.image" [alt]="sp.tenSP" class="img-fluid">
+            </a>
+          </td>
+          <td>{{ sp.giaBan }}</td>
+          <td align="center">{{ sp.soLuong }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="form-group">
+    <label for="tongTien">Tổng tiền</label>
+    <input type="text" class="form-control" id="tongTien" name="hinhThucThanhToan" [(ngModel)]="tongTien" disabled>
+  </div>
+</div>

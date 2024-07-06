@@ -1,0 +1,29 @@
+<div class="col-sm-9">
+  <form #addForm="ngForm" (submit)="themUser()">
+    <div class="form-group">
+      <label for="tenUser">Tên người dùng</label>
+      <input type="text" class="form-control" id="tenUser" name="tenUser" [(ngModel)]="tenUser" required>
+    </div>
+    <div class="form-group">
+      <label for="sdt">Số điện thoại</label>
+      <input type="text" class="form-control" id="sdt" name="sdt" [(ngModel)]="sdt" required>
+    </div>
+    <div class="form-group">
+      <label for="diaChi">Địa chỉ</label>
+      <input type="text" class="form-control" id="diaChi" name="diaChi" [(ngModel)]="diaChi" required>
+    </div>
+    <div class="form-group">
+      <label for="userName">Tên đăng nhập</label>
+      <input type="text" class="form-control" id="userName" name="userName" [(ngModel)]="userName" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Mật khẩu</label>
+      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <div class="form-group">
+      <label for="repassword">Nhập lại mật khẩu</label>
+      <input type="password" class="form-control" id="repassword" name="repassword" [(ngModel)]="repassword" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Thêm người dùng</button>
+  </form>
+</div>

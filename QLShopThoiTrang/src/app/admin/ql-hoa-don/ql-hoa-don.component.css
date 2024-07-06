@@ -1,0 +1,21 @@
+.modal-header {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+  padding: 1rem;
+  margin: -1rem -1rem 0 0;
+  background: transparent;
+  border: none;
+  font-size: 40px;
+  color: black;
+  opacity: 0.5;
+}
+
+.close:hover {
+  color: black;
+  opacity: 10.75;
+}

@@ -1,0 +1,38 @@
+<div class="col-sm-9">
+  <form #editForm="ngForm" (submit)="suaSanPham()">
+    <div class="form-group">
+      <label for="tenSP">Tên Sản Phẩm</label>
+      <input type="text" class="form-control" id="tenSP" name="tenSP" [(ngModel)]="tenSP" required>
+    </div>
+    <div class="form-group">
+      <label for="moTa">Mô Tả</label>
+      <textarea class="form-control" id="moTa" name="moTa" [(ngModel)]="moTa"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="giaBan">Giá Bán</label>
+      <input type="number" class="form-control" id="giaBan" name="giaBan" [(ngModel)]="giaBan" required>
+    </div>
+    <div class="form-group">
+      <label for="soLuong">Số Lượng</label>
+      <input type="number" class="form-control" id="soLuong" name="soLuong" [(ngModel)]="soLuong" required>
+    </div>
+    <div class="form-group">
+      <label for="idThuongHieu">Thương Hiệu</label>
+      <select class="form-control" id="idThuongHieu" name="idThuongHieu" [(ngModel)]="idThuongHieu" required>
+        <option *ngFor="let th of thuongHieuList" [value]="th.id">{{ th.tenTH }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="idDanhMuc">Danh Mục</label>
+      <select class="form-control" id="idDanhMuc" name="idDanhMuc" [(ngModel)]="idDanhMuc" required>
+        <option *ngFor="let dm of danhMucList" [value]="dm.id">{{ dm.tenDM }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="image">Ảnh sản phẩm</label>
+      <input type="file" class="form-control-file" id="image" name="image" (change)="onFileSelected($event)" accept=".jpg, .jpeg, .png" required>
+      <img [src]="'http://localhost:5009/SanPham/Images/'+image" width="100" [alt]="sanPham.tenSP" class="img-fluid">
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+  </form>
+</div>

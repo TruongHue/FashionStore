@@ -1,0 +1,23 @@
+.links {
+  background-color: #0e2d85;
+  padding: 15px;
+}
+
+.links a {
+  padding: 8px;
+  margin: 5px;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1.5px 0 #1859c0, 0 1px #1859c0, 2px 0 #1859c0, 0 -1px #1859c0;
+  font-size: 16px;
+  border-radius: 20px;
+  text-decoration: none
+}
+
+.links a.active {
+  background-color: #adccff;
+  color: white;
+  text-shadow: -1px 0 #1859c0, 0 1px #1859c0, 1px 0 #1859c0, 0 -1px #1859c0;
+  border-radius: 20px;
+}
+

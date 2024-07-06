@@ -1,0 +1,99 @@
+<app-admin></app-admin>
+
+<div class="container">
+  <br>
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel3">Thông tin thương hiệu</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongXem()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-xem-thuong-hieu *ngIf="xem" [thuongHieu]="thuongHieu"></app-xem-thuong-hieu>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Chỉnh sửa thông tin thương hiệu</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongSua()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-sua-thuong-hieu *ngIf="sua" [thuongHieu]="thuongHieu"></app-sua-thuong-hieu>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Chỉnh sửa thông tin thương hiệu</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="dongThem()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-them-thuong-hieu *ngIf="them"></app-them-thuong-hieu>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4><b>Danh sách thương hiệu</b></h4>
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-success mr-1" (click)="themThuongHieu()" data-toggle="modal" data-target="#exampleModal2" >
+        Thêm thương hiệu
+      </button>
+    </div>
+    <div class="col-sm-3">
+      <li class="p-input-icon-right">
+        <i class="p-input-icon-left pi pi-search" (click)="timThuongHieu()"></i>
+        <input pInputText type="text" placeholder="Tìm thương hiệu..." [(ngModel)]="searchString"/>
+      </li>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+       <table class="table table-striped">
+          <thead>
+            <tr align="center">
+              <th width="13%"> Mã thương hiệu </th>
+              <th width="13%"> Tên thương hiệu</th>
+              <th> Mô tả </th>
+              <th width="15%"> Tùy chọn </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr align="center" *ngFor="let thuongHieu of DSThuongHieu">
+              <td>{{thuongHieu.id}}</td>
+              <td>{{thuongHieu.tenTH}}</td>
+              <td>{{thuongHieu.moTa}}</td>
+              <td>
+                <button type="button" class="btn btn-success mr-1" (click)="xemThuongHieu(thuongHieu)" data-toggle="modal" data-target="#exampleModal3" >
+                  Xem
+                </button>
+                <button type="button" class="btn btn-primary mr-1" (click)="suaThuongHieu(thuongHieu)" data-toggle="modal" data-target="#exampleModal" >
+                  Sửa
+                </button>
+                <button type="button" class="btn btn-danger mr-1" (click)="xoaThuongHieu(thuongHieu)">
+                  Xóa
+                </button>
+              </td>
+            </tr>
+          </tbody>
+       </table>
+    </div>
+  </div>
+</div>
