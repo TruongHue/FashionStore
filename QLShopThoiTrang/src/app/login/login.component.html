@@ -1,0 +1,19 @@
+<div class="login-form fs_form">
+  <div class="login-left">
+    <div class="login fs_login">
+      <h2 class="login-header fs_header">Đăng nhập</h2>
+      <div class="fs_login_grid">
+          <div>
+            <input name="userName" [(ngModel)]="userName"  type="text" placeholder="Tên đăng nhập">
+          </div>
+          <div>
+            <input name="password" [(ngModel)]="password"  type="password" placeholder="Mật khẩu">
+          </div>
+          <input type="submit" (click)="dangNhap()" value="Đăng nhập">
+        <div class="bottom-text">
+          <p>Chưa có tài khoản? <a [routerLink]="'/register'">Đăng ký</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

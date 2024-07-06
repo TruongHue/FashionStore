@@ -1,0 +1,96 @@
+<div class="links" *ngIf="!quyen()">
+  <div class="row">
+    <div class="container">
+      <ul>
+        <div class="logo-img"></div>
+      </ul>
+        <nav>
+          <ul>
+            <li>
+              <a class="fs-user pi pi-home" routerLink="/home" routerLinkActive="active"> Trang chủ </a>
+            </li>
+            <li>
+              <a class="fs-user pi pi-shop" routerLink="/san-pham" routerLinkActive="active"> Sản phẩm </a>
+            </li>
+            <li>
+              <a class="fs-user pi pi-telegram" routerLink="/about" routerLinkActive="active"> Giới thiệu </a>
+            </li>
+            <li>
+              <a class="fs-user pi pi-comments" routerLink="/contact" routerLinkActive="active"> Liên hệ </a>
+            </li>
+            <li>
+              <a class="user pi pi-user" routerLink="user/hoa-don" routerLinkActive="active"></a>
+            </li>
+            <li>
+              <a class="user pi pi-shopping-cart" routerLink="gio-hang" routerLinkActive="active"></a>
+            </li>
+            <li>
+              <a *ngIf="!daDangNhap()" class="fs-user pi pi-sign-in" routerLink="/login" routerLinkActive="active"> Đăng nhập </a>
+            </li>
+            <li>
+              <a *ngIf="!daDangNhap()" class="fs-user pi pi-user-edit" routerLink="/register" routerLinkActive="active"> Đăng ký </a>
+            </li>
+            <li>
+              <a *ngIf="daDangNhap()" class="fs-user pi pi-sign-out" routerLink="/" (click)="dangXuat()"> Đăng xuất </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+<div class="top-menu" *ngIf="daDangNhap() && quyen()">
+  <li>
+    <a class="fs-admin pi pi-sign-out" href="/" (click)="dangXuat()"> Đăng xuất </a>
+  </li>
+</div>
+<router-outlet></router-outlet>
+
+<p-toolbar styleClass="p-mb-4" [style]="{ 'background-color': '#c3d8ff', 'width': '100%'}" *ngIf="!quyen()">
+  <ng-template pTemplate="left">
+    <table class="bottom-header-left">
+      <tr><td>
+        <div class="p-d-flex p-ai-center p-jc-between">
+          <span class="p-input-icon-left">
+            <a href="https://www.facebook.com/"><p class="header-top pi pi-facebook" style="color: blue"></p></a>
+            <a href="https://www.tiktok.com/"><p class="header-top pi pi-tiktok" style="color: white; background-color: black; border-radius: 25px;"></p></a>
+            <a href="https://www.instagram.com/"><p class="header-top pi pi-instagram" style="color: deeppink"></p></a>
+          </span>
+        </div>
+      </td></tr>
+      <div>
+          <span class="p-input-icon-left">
+            <tr><td><b>Liên hệ</b></td></tr>
+            <tr><td><div class="header-bottom pi pi-map-marker"> Đường xx, Phường xx, Thành phố Quy Nhơn, Tỉnh Bình Định</div></td></tr>
+            <tr><td><div class="header-bottom pi pi-phone"> 03xx.xxx.xxx</div></td></tr>
+            <tr><td><div class="header-bottom pi pi-building-columns"> 0898.100.xxx</div></td></tr>
+            <tr><td><div class="header-bottom pi pi-comments"> 0898.100.xxx (Zalo)</div></td></tr>
+            <tr><td><div class="header-bottom pi pi-envelope"> fashionstore&#64;gmail.com</div></td></tr>
+          </span>
+      </div>
+    </table>
+  </ng-template>
+  <ng-template pTemplate="right">
+
+    <table class="bottom-header-right" align="right">
+      <tr><td align="right">
+        <div class="p-d-flex p-ai-center p-jc-between">
+          <span class="p-input-icon-right">
+            <p class="header-top pi pi-paypal" style="color: #4672ff"></p>
+            <p class="header-top pi pi-wallet"></p>
+            <p class="header-top pi pi-credit-card"></p>
+          </span>
+        </div>
+      </td></tr>
+      <div>
+          <span class="p-input-icon-left">
+            <tr><td><b>Chính sách</b></td></tr>
+            <tr><td><div class="header-bottom pi pi-verified"> Chính sách thanh toán</div></td></tr>
+            <tr><td><div class="header-bottom pi pi-verified"> Chính sách bảo hành, đổi trả</div></td></tr>
+            <tr><td><div class="header-bottom pi pi-verified"> Chính sách giao, nhận và kiểm hàng</div></td></tr>
+            <tr><td><div class="header-bottom pi pi-verified"> Chính sách bảo mật thông tin</div></td></tr>
+            <tr><td><div class="header-bottom pi pi-verified"> Chính sách mua hàng</div></td></tr>
+          </span>
+      </div>
+    </table>
+  </ng-template>
+</p-toolbar>

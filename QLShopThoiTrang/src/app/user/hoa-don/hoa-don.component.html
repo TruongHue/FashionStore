@@ -1,0 +1,32 @@
+<div class="col-sm-9 container">
+    <div class="row">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Đơn hàng</th>
+            <th>Ngày mua</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngIf="DSHD && DSHD.length > 0">
+          <tr *ngFor="let hoaDon of DSHD">
+            <td>{{ hoaDon.idHD }}</td>
+            <td>{{ hoaDon.ngayTao | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ hoaDon.tongTien | currency:'VND':'symbol':'1.0-0' }}</td>
+            <td>{{hoaDon.trangThaiHD}}</td>
+            <td>
+                <button routerLink="/donhang/{{ hoaDon.idHD }}">Chi tiết</button>
+                <button >Hủy</button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody class="col-10 col-sm-7" *ngIf="!DSHD || DSHD.length === 0">
+          <tr>
+            <td colspan="4">Không tìm thấy sản phẩm phù hợp.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

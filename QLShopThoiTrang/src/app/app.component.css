@@ -1,0 +1,108 @@
+@import "primeicons/primeicons.css";
+
+* {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.nav {
+  display: flex;
+  padding: 0 10%;
+}
+
+.nav-list {
+  padding-left: 0;
+  align-items: center;
+}
+
+.top-menu {
+  margin-left: 1150px;
+}
+
+.fs-admin {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #245fbe;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.fs-admin:hover {
+  background-color: #adccff;
+  color: black;
+}
+
+.logo-img {
+   background-image: url("E:/CongNgheWeb/BaiTapCuoiKy_Angular+.Net/QLShopThoiTrang/src/assets/images/header/fashion-store-logo.png");
+  background-size: cover;
+  background-repeat: round;
+  height: 110px;
+  width: 113px;
+  border-radius: 50px;
+}
+
+.links {
+  background-color: #c3d8ff;
+  padding: 20px;
+}
+
+.links {
+  background-color: #c3d8ff;
+  padding: 20px;
+}
+
+.links a {
+  padding: 8px;
+  margin: 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.links a.active {
+  background-color: #245fbe;
+  color: white;
+  text-shadow: -1px 0 #1859c0, 0 1px #1859c0, 1px 0 #1859c0, 0 -1px #1859c0;
+  border-radius: 20px;
+}
+
+.p-input-icon-left a {
+  text-decoration: none;
+}
+.links a.current {
+  background-color: #245fbe;
+  color: white;
+}
+
+.links a:focus,
+.links a:target {
+  background-color: #245fbe;
+  color: white;
+}
+
+.links a:hover {
+  background-color: #343a40;
+  color: white;
+}
+
+.bottom-header-right {
+  margin-right: 250px;
+}
+
+.bottom-header-left {
+  margin-left: 250px;
+}
+
+.header-bottom {
+  font-size: 16px
+}
+
+.header-top {
+  margin: 5px;
+  font-size: 1.8em;
+}

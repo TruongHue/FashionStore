@@ -1,0 +1,157 @@
+.fs_form {
+   background-image: url("E:/CongNgheWeb/BaiTapCuoiKy_Angular+.Net/QLShopThoiTrang/src/assets/images/header/background_login.png");
+  background-size: cover;
+  background-repeat: round;
+  height: 100%;
+  width: 100%;
+}
+
+.register-left {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fs_register {
+  border: 1px double black;
+  border-radius: 25px;
+  width: 450px;
+  margin-left: 200px;
+}
+
+.register-header,
+.register p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*Header Dang Ky*/
+.register-header {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding: 8px 0 0 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0051a3;
+}
+
+/*Form register*/
+.register_child_header {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title {
+  font-weight: bold;
+  width: 50%;
+  margin: 10px 0 10px 0;
+}
+
+.title-required {
+  color: red;
+  margin: 10px -10px 10px 0;
+}
+
+.fs_register_info_grid {
+  border: 1px double black;
+  border-radius: 25px;
+  padding: 0 15px 5px 15px;
+  margin: 0px 10px 0 10px;
+  align-items: center;
+}
+
+.fs_register_account_grid {
+  border: 1px double black;
+  border-radius: 25px;
+  padding: 0 15px 5px 15px;
+  margin: 10px 10px 0 10px;
+  align-items: center;
+}
+
+.line {
+  display: flex;
+}
+
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="date"],
+.register input[type="email"] {
+  margin: 5px 0 5px 10px;
+  box-sizing: border-box;
+  display: block;
+  width: 80%;
+  height: 25px;
+  border-radius: 15px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 13px;
+  outline:none;
+  font-family: inherit;
+  font-size: 0.95em;
+  color: #807b7b;
+}
+
+.register input[type="text"]:focus,
+.register input[type="password"]:focus,
+.register input[type="date"]:focus,
+.register input[type="email"]:focus {
+  border: 2px double #0e4fb7;
+}
+
+.gioiTinh, i {
+  margin: 10px 0;
+  height: 18px;
+  width: 20%;
+  font-family: inherit;
+}
+
+/*Button Dang Ky*/
+.button_dangKy {
+  text-align: center;
+}
+
+.register input[type="submit"] {
+  background:#0e4fb7 ;
+  border-color: transparent;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 2px 7px 2px 7px;
+}
+
+.register input[type="submit"]:hover {
+  background: #0e2d85;
+}
+
+.register input[type="submit"]:focus {
+  border-color: #05a;
+}
+
+/*Bottom text Dang Nhap*/
+.bottom-text {
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.bottom-text a {
+  color: #0e2d85;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+  font-size:16px;
+}
+
+.bottom-text a:hover {
+  color:#ef4d4d;
+}

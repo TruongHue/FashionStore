@@ -1,0 +1,81 @@
+<app-main-user></app-main-user>
+
+<div class="container">
+  <div class="row">
+    <div class="table-responsive cart_info">
+      <div style="text-align: center;"><h4>Thanh toán</h4></div>
+
+      <div>
+        <p class="title-info">
+          <b>Thông tin nhận hàng:</b>
+          <tr>
+          {{User.userName}}</tr>
+          <tr>
+          {{User.sdt}}</tr>
+          <tr>
+          <span> {{ TTHD.diaChi }}</span>
+          </tr>
+        </p>
+      </div>
+
+      <div>
+        <p class="title-info">
+          <b>Trạng thái đơn hàng:</b>
+          <span>  {{ TTHD.trangThaiHD }}</span>
+        </p>
+      </div>
+
+      <div>
+        <p class="title-info">
+          <b>Danh sách sản phẩm</b>
+        </p>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Tên sản phẩm</th>
+              <th>Hình ảnh</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let gioHang of DSSP">
+              <td>{{ gioHang.sanPham.tenSP }}</td>
+              <td>
+                <img [src]="'assets/images/' + gioHang.sanPham.image" [alt]="gioHang.sanPham.image" class="img-fluid">
+              </td>
+              <td>{{ gioHang.giaBan }}</td>
+              <td>x{{ gioHang.soLuong }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <p class="title-info">
+          <b>Hình thức thanh toán:</b>
+        </p>
+        <input class="form-control" [placeholder]="hinhThucThanhToan" disabled readonly>
+        <!-- Placeholder dynamically bound to hinhThucThanhToan -->
+      </div>
+
+      <div>
+        <p class="title-info">
+          <b>Tổng tiền thanh toán:</b>
+        </p>
+        <input class="form-control" value={{TTHD.tongTien}} disabled type="text" name="totalPayment">
+        <!-- Display total payment amount if applicable -->
+      </div>
+
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-9">
+    </div>
+    <div class="col-sm-3">
+        <a class="btn btn-success btn-block" routerLink="/user/hoa-don">Trở về</a>
+    </div>
+</div>
+

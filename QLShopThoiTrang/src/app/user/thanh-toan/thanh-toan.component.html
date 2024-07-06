@@ -1,0 +1,83 @@
+<div class="col-sm-9 container">
+  <div class-row>
+		<div class="table-responsive cart_info">
+            <div style="text-align: center;"><h4> Thanh toán</h4> </div>
+            <div>
+                <p class="title-info">
+                    <b>Thông tin nhận hàng: </b>
+                </p>
+                <td>
+                    Tên người nhận: {{User.userName}}
+                </td>
+                <tr></tr>
+                <td>
+                    Số điện thoại: {{User.sdt}}
+                </td>
+                <tr></tr>
+                    Địa chỉ:
+                <input class="info" *ngIf="diaChi"  type="text" [(ngModel)]="diaChi" required  />
+                <input class="info" *ngIf="!diaChi" style="border: 1px solid #9d0202;"  type="text" [(ngModel)]="diaChi" required  />
+                <span *ngIf="!diaChi" style="color: #ef1919;" class="error-message"><td></td>Vui lòng nhập địa chỉ nhận hàng</span> <!-- Hiển thị thông báo lỗi -->
+            </div>
+            <br>
+            <div>
+				<p class="title-info">
+					<b>Danh sách sản phẩm </b>
+				</p>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th> Tên sản phẩm </th>
+                      <th> Hình ảnh</th>
+                      <th> Giá</th>
+                      <th> Số lượng</th>
+                    </tr>
+                    </thead>
+                <tr *ngFor="let gioHang of DSSPGioHang" >
+                    <td readonly>{{ gioHang.sanPham.tenSP }}</td> 
+                      <td readonly><a>
+                      <img [src]="'assets/images/'+gioHang.image" [alt]="gioHang.image" class="img-fluid">
+                    </a></td>
+                    <td readonly>{{gioHang.gia}}</td>
+                    <td  readonly>
+                        x{{gioHang.soLuong}}
+                    </td>
+                </tr>
+                <tr></tr>
+                </table>
+            </div>
+            <div>
+                <p class="title-info">
+                    <b>Hình thức thanh toán:</b>
+                </p>
+                <select class="info" *ngIf="hinhThucThanhToan" [(ngModel)]="hinhThucThanhToan" required  >
+                    <option selected disabled>Chọn hình thức thanh toán</option>
+                    <option value="tien-mat">Thanh toán bằng tiền mặt</option>
+                    <option value="chuyen-khoan">Chuyển khoản ngân hàng</option>
+                </select>
+                <select class="info" *ngIf="!hinhThucThanhToan" style="border: 1px solid #9d0202;" [(ngModel)]="hinhThucThanhToan" required  >
+                    <option selected disabled>Chọn hình thức thanh toán</option>
+                    <option value="Thanh toán bằng tiền mặt">Thanh toán bằng tiền mặt</option>
+                    <option value="Chuyển khoản ngân hàng">Chuyển khoản ngân hàng</option>
+                </select>
+                <span *ngIf="!hinhThucThanhToan" style="color: #ef1919;" class="error-message"><td></td>Vui lòng nhập địa chỉ nhận hàng</span> <!-- Hiển thị thông báo lỗi -->
+            </div>
+            
+            <div>
+				<p class="title-info">
+					<b>Tổng tiền thanh toán : </b>
+				</p>
+				<input class="info" disabled type="text" name="username" placeholder={{TongTien}} />
+			</div>
+            <br>
+			<div class="row">
+                <div class="col-sm-9">
+                    <a class="btn btn-success btn-block" routerLink="/user/hoa-don">Trở về</a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-success btn-block float-end" (click)="thanhToan()" >Thanh toán</a>
+                </div>
+            </div>
+            
+		</div>
+	</div>

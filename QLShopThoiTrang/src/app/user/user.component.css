@@ -1,0 +1,24 @@
+.image img{
+    height: 220px;
+    width: 200px;
+  }
+
+  .image{
+    background-color: white;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 10px;
+    width: 30%;
+  }
+
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+.left{
+    margin:auto;
+    padding-left: 5%;
+}

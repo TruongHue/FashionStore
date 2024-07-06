@@ -1,0 +1,46 @@
+<div class="register-form fs_form">
+  <div class="register-left">
+    <div class="register fs_register">
+      <h2 class="register-header fs_header">Đăng ký tài khoản</h2>
+        <div class="fs_register_info_grid">
+          <h2 class="register_child_header">Thông tin tài khoản</h2>
+          <div class="line">
+            <label class="title">Họ và tên</label><input name="tenUser" [(ngModel)]="tenUser" type="text">
+            <label class="title-required">*</label>
+          </div>
+          <div class="line">
+            <label class="title">Địa chỉ</label><input name="diaChi" [(ngModel)]="diaChi" type="text">
+            <label class="title-required">*</label>
+          </div>
+          <div class="line">
+            <label class="title">Số điện thoại</label><input name="sdt" [(ngModel)]="sdt" type="text">
+            <label class="title-required">*</label>
+          </div>
+        </div>
+
+        <div class="fs_register_account_grid">
+          <h2 class="register_child_header">Thông tin đăng nhập</h2>
+          <div class="line">
+            <label class="title">Tên đăng nhập</label><input name="userName" [(ngModel)]="userName" type="text">
+            <label class="title-required">*</label>
+          </div>
+          <div class="line">
+            <label class="title">Mật khẩu</label><input name="password" [(ngModel)]="password" type="password">
+            <label class="title-required">*</label>
+          </div>
+          <div class="line">
+            <label class="title">Nhập lại mật khẩu</label><input name="repassword" [(ngModel)]="repassword" type="password">
+            <label class="title-required">*</label>
+          </div>
+        </div>
+
+        <div class="button_dangKy">
+          <input type="submit" (click)="dangKy()" value="Đăng ký">
+        </div>
+
+      <div class="bottom-text">
+        <p>Tôi đã có tài khoản? <a [routerLink]="'/login'">Đăng nhập</a></p>
+      </div>
+    </div>
+  </div>
+</div>
